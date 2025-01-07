@@ -49,7 +49,7 @@ class CaesarCipher(val cipher: Int) {
     }
 
     fun shiftIndex(index: Int, shift: Int): Int {
-        return (numAlphabet + index + shift).mod(numAlphabet)
+        return (index + shift).mod(numAlphabet)
     }
 
 }

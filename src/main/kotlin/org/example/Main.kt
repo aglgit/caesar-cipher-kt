@@ -1,14 +1,21 @@
 package org.example
 
+import java.io.File
+
 // TODO: Complete CLI using Clikt
 // https://github.com/ajalt/clikt/tree/master
 // read in filename, cipher, decode flag
 fun main() {
-    val text = "abcdefghijklmnopqrstuvwxyzæøå randomTEXT RANDOM%&/(#text ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ"
-    println("Text: \n" + text)
+    val text = readFile("input/input.txt")
+    println("Text: \n$text")
     val encoder = CaesarCipher(3)
-    val encoded_text = encoder.encode(text)
-    val decoded_text = encoder.decode(encoded_text)
-    println("Encoded text: \n" + encoded_text)
-    println("Decoded text: \n" + decoded_text)
+    val encodedText = encoder.encode(text)
+    val decodedText = encoder.decode(encodedText)
+    println("Encoded text: \n$encodedText")
+    println("Decoded text: \n$decodedText")
 }
+
+fun readFile(filename: String): String = File(filename)
+    .inputStream()
+    .readBytes()
+    .toString(Charsets.UTF_8)

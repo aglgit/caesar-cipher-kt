@@ -1,8 +1,7 @@
 package org.example
 
-class CaesarCipher(cipher: Int) {
+class CaesarCipher(val cipher: Int) {
 
-    val cipher: Int = cipher
     val numAlphabet: Int = 29
     val lowerAlphabet = "abcdefghijklmnopqrstuvwxyzæøå"
     val lowerNorwegianMap: HashMap<Char, Int>

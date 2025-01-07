@@ -11,4 +11,4 @@ Encode file
 
 Decode file
 
-```./gradlew run --args="-f input/input_shift_3.txt -c 3"```
+```./gradlew run --args="-f input/input_shift_3.txt -c 3 -d"```
